@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery.js"></script>
+    <link rel="stylesheet" href="base.css"/>
+    <link rel="stylesheet" href="font-awesome.css"/>
+    <style>
+        html, body {
+            height: 100%;
+        }
+        #menu_trigger {
+            padding: 0.25em 0.5em;
+            background-color: gray;
+            color: #555;
+            display: inline-block;
+            cursor: pointer;
+
+            position: fixed;
+            left: 0;
+        }
+        #menu {
+            position: fixed;
+            top: 0;
+            left: -15em;
+            min-height: 100%;
+            width: 15em;
+            background-color: gray;
+        }
+
+        nav {
+            padding: 0.25em 0;
+        }
+
+        nav ul {
+            padding: 0 0.25em;
+            margin: 0;
+            list-style-type: none;
+        }
+        nav li {
+            color: #eee;
+            font-size: 0.85em;
+            font-weight: 500;
+            padding: 0.5em;
+            border-bottom: 1px solid #555;
+        }
+    </style>
+    <script>
+        $(function () {
+            console.log('loading functions ... attaching click handler ');
+            var $trigger = $('#menu_trigger');
+            $trigger.click(function () {
+                $trigger.toggleClass('menu-active');
+                if($trigger.hasClass('menu-active')) {
+                    $('#menu').animate({
+                        left: '0'
+                    });
+                    $trigger.animate({
+                        left: '15em'
+                    });
+                } else {
+                    $('#menu').animate({
+                        left: '-15em'
+                    });
+                    $trigger.animate({
+                        left: '0'
+                    });
+                }
+
+
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="menu_trigger">
+        <i class="fa fa-bars fa-2x"></i>
+    </div>
+    <nav id="menu">
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Book Search</li>
+            <li>Reviews</li>
+        </ul>
+    </nav>
+</body>
+</html>

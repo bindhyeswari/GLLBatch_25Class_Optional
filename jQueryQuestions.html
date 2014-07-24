@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        $(function () {
+            $('div').attr('id', function (index) {
+                this.id = 'div' + index;
+            });
+        });
+    </script>
+</head>
+<body>
+    <div>First Div</div>
+    <div>Second Div</div>
+    <div>Third Div</div>
+</body>
+</html>

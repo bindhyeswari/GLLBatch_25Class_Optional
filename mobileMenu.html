@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="base.css"/>
+    <style>
+        #content {
+
+            width: 100%;
+            overflow: hidden;
+            position: absolute;
+            background-color: #eee;
+        }
+
+        nav {
+        }
+
+    </style>
+    <script src="jquery.js"></script>
+    <script>
+        $(function () {
+            $('#slider').click(function () {
+                $('#content').toggleClass('moved');
+                if($('#content').hasClass('moved')) {
+                    // check if the div has moved
+                    $('#content').animate({
+                        left: '150'
+                    }, 300);
+                } else {
+                    $('#content').animate({
+                        left: '0'
+                    }, 300);
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="content">
+        <button id="slider">Slide Menu</button>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In viverra felis magna, non fermentum turpis hendrerit sed. Proin ultrices orci non malesuada consectetur. Mauris lacus urna, faucibus at facilisis nec, convallis non purus. Integer leo lectus, pellentesque vel vulputate a, commodo scelerisque neque. Donec at turpis id massa congue malesuada vel non nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec sagittis vel mauris eget ultricies. Aliquam a elit sed sem dapibus egestas. Cras sit amet nisi at odio pharetra sagittis. Aliquam a pharetra mi. Donec commodo nisi nulla, ac condimentum nulla vehicula vel. Nunc luctus lectus eget justo sagittis posuere. Curabitur odio risus, fringilla sed condimentum at, fermentum non leo.
+    </div>
+    <nav>
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Books</li>
+            <li>Reviews</li>
+        </ul>
+    </nav>
+
+</body>
+</html>
